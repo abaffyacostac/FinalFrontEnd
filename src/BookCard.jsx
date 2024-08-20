@@ -28,7 +28,7 @@ const BookCard = ({ book }) => {
         </h2>
         <h3>{book.bookAuthor}</h3>
         <p>{book.description}</p>
-        <button className="btn btn-info float-right" onclick={handledelete} >X</button>
+        <button className="btn btn-info float-right" onclick={handleDelete} >X</button>
       </div>
     </div>
   );
