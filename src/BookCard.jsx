@@ -11,7 +11,10 @@ const BookCard = ({ book }) => {
     e.preventDefault();
     axios
       .delete(`${config.backendUrl}/${book._id}`)
-      .then(() => navigate('/'))
+      .then(() => {
+        navigate('/'); // Navigate to the desired page
+        window.location.reload(); // Force a page reload
+      })
       .catch((err) => console.log('Error in Delete Book:', err));
   };
 
