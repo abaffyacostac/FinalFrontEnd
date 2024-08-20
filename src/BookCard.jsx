@@ -23,7 +23,7 @@ const BookCard = ({ book }) => {
         </h2>
         <h3>{book.bookAuthor}</h3>
         <p>{book.description}</p>
-        <a className="btn btn-info float-right" onclick={handledelete} >X</a>
+        <button className="btn btn-info float-right" onclick={handledelete} >X</button>
       </div>
     </div>
   );
