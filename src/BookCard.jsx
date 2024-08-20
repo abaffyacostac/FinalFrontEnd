@@ -1,15 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import config from './config'; // make sure to import your config
 
-const handleDelete = (e) => {
-  e.preventDefault();
-  axios
-    .delete(`${config.backendUrl}/${book._id}`, book )
-    .then(() => navigate('/'))
-    .catch((err) => console.log('Error in Delete Book:', err));
-};
 
 const BookCard = ({ book }) => {
+  const navigate = useNavigate();
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    axios
+      .delete(`${config.backendUrl}/${book._id}`)
+      .then(() => navigate('/'))
+      .catch((err) => console.log('Error in Delete Book:', err));
+  };
+
   return (
     <div className="card-container">
       <img
