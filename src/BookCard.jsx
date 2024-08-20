@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const handleSubmit = (e) => {
+const handleDelete = (e) => {
   e.preventDefault();
   axios
-  
     .delete(`${config.backendUrl}/${book._id}`, book )
     .then(() => navigate('/'))
     .catch((err) => console.log('Error in Delete Book:', err));
@@ -24,7 +23,7 @@ const BookCard = ({ book }) => {
         </h2>
         <h3>{book.bookAuthor}</h3>
         <p>{book.description}</p>
-        <a className="btn btn-info float-right" href="/">X</a>
+        <a className="btn btn-info float-right" onclick={handledelete} >X</a>
       </div>
     </div>
   );
