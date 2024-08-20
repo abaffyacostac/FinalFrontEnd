@@ -22,7 +22,7 @@ const BookCard = ({ book }) => {
         <h2>
           <Link to={`/show-book/${book._id}`}>{book.bookTitle}</Link>
         </h2>
-        <h3>{book.author}</h3>
+        <h3>{book.bookAuthor}</h3>
         <p>{book.description}</p>
         <a className="btn btn-info float-right" href="/">X</a>
       </div>
